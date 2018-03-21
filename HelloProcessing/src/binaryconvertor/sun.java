@@ -10,7 +10,7 @@ public class sun extends PApplet {
 
 	}
 
-	public void setup() {
+	public void setup()  {
 		smooth();
 		background(255);
 		noLoop();
