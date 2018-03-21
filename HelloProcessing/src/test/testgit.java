@@ -5,6 +5,6 @@ public class testgit {
 	//2 kinessisk
 
 	
-	//3 kinessisk 3
+	//3 kinessisk 4
 
 }
