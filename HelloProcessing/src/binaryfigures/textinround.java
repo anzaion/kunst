@@ -1,14 +1,15 @@
-package binaryconvertor;
+package binaryfigures;
 
 
+import binaryconvertor.StringAndBinary;
 import processing.core.PApplet;
 import processing.core.PShape;
 import processing.pdf.*;
 
-public class textinround extends PApplet {
+public class textinround extends BinaryFigure {
 
 	public static void main(String[] args) {
-		PApplet.main("binaryconvertor.textinround");
+		PApplet.main("binaryfigures.textinround");
 
 	}
 	PShape snowFlake;
@@ -17,22 +18,15 @@ public class textinround extends PApplet {
 	StringAndBinary text;
 
 	public void setup() {
-		smooth();
-		background(255);
-		noLoop();
-		beginRecord(PDF, "textinround.pdf"); 
-		
-		text = new StringAndBinary("textforscatch.txt");
-		
+		super.setup();
+
 		snowFlake = loadShape("1_T_Outline_with_fill.svg");
 		small1 = snowFlake.getChild("sign1");
 		small2 = snowFlake.getChild("sign2");
 		shapeMode( CENTER );
 	}
 
-	public void settings() {
-		size(1000, 1000);
-	}
+
 	
 	
 	public void round(int centro, int radius, int dotD, int distance,
