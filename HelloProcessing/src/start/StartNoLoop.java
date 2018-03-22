@@ -1,15 +1,16 @@
-package binaryconvertor;
+package start;
 
 
+import binaryconvertor.StringAndBinary;
 import processing.core.PApplet;
 
-public class sunBinary extends PApplet {
+public class StartNoLoop extends PApplet {
 
 	
 	//commit2
 	
 	public static void main(String[] args) {
-		PApplet.main("binaryconvertor.sunBinary");
+		PApplet.main("start.Start");
 
 	}
 	StringAndBinary text;

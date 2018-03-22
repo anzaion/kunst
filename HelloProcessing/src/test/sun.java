@@ -1,4 +1,4 @@
-package binaryconvertor;
+package test;
 
 
 import processing.core.PApplet;
@@ -6,7 +6,7 @@ import processing.core.PApplet;
 public class sun extends PApplet {
 
 	public static void main(String[] args) {
-		PApplet.main("binaryconvertor.sun");
+		PApplet.main("test.sun");
 
 	}
 
