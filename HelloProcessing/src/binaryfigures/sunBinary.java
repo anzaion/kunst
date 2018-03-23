@@ -15,22 +15,23 @@ public class sunBinary extends BinaryFigure {
 	}
 	
 	public void draw(){
-		  int amountOfPoints =  30 ;// (int) random(20, 50); //number of points
+		  int amountOfPoints =  15 ;// (int) random(20, 50); //number of points
 				 
-		  int centroX = 700;
-		  int centroY = 400;
+		  int centroX = 500;
+		  int centroY = 500;
 		 
 		  int radius_inside = 150;
-		  int radiusMin = 200;
-		  int radiusMax = 400;
+		  int radiusMin = 600;
+		  int radiusMax = 600;
 		 	      
 		  //size of shape
-		  int dotD = 15;
+		  int dotDOne = 120;
+		  int dotDZero = 8;
 		  //distance between shapes
 	      int distance = 30;
 		 
 	      drawSun(centroX,centroY,  amountOfPoints, radiusMin ,radiusMax, radius_inside,
-	  			dotD, distance)  ;
+	  			dotDOne, dotDZero, distance)  ;
 		 
 		  super.draw();
 		}
@@ -42,6 +43,9 @@ public class sunBinary extends BinaryFigure {
 	public void styleforZero() {
 		
 		super.styleforZero();
+		noFill();
+		stroke(255, 0, 0);
+		strokeWeight(20);
 		
 	}
 	
@@ -50,14 +54,17 @@ public class sunBinary extends BinaryFigure {
 	 */
 	public void styleforOne() {
 		
-
 		super.styleforOne();
+		noFill();
+		stroke(255, 0, 0);
+		strokeWeight(20);
+		
 		
 	}
 	
 
 	public void drawSun(int centroX, int centroY, int amountOfPoints,  int radiusMin, int radiusMax,
-			int radius_inside, int dotD,int distance) {
+			int radius_inside, int dotDOne, int dotDZero,int distance) {
 		
 		float pointAngle = 360 / amountOfPoints; // angle between points
 		for (float angle = 270; angle < 630; angle = angle + pointAngle) {
@@ -71,7 +78,7 @@ public class sunBinary extends BinaryFigure {
 			drawRey( centroX,  centroY,  
 					xcentr, ycentr,
 					radius_inside, radius - radius_inside,
-					dotD, distance, angle);
+					dotDOne,  dotDZero, distance, angle);
 
 		}
 
@@ -79,9 +86,13 @@ public class sunBinary extends BinaryFigure {
 	
 	public void drawRey(int centroX, int centroY,float xi, float yi, 
 			float radiusi, int radius, 
-			int dotD,int distance,float angle)
+			int dotDOne, int dotDZero,int distance,float angle)
 	{
 		int i = 0;
+		int dotD = dotDOne;
+		if(dotDZero>dotDOne)
+		 dotD = dotDZero;
+		
 		int N = (radius) / (dotD + distance);
 
 		while (i <= N) {
@@ -93,17 +104,20 @@ public class sunBinary extends BinaryFigure {
 				break;
 			
 			
+			int dotDTemp = 0;
 			if (text.isCurrentCharOne())
 			{
 		       styleforOne();
-			}
+		       dotDTemp = dotDOne;
+		    }
 			else
 			{
 			  styleforZero();
+			  dotDTemp = dotDZero;
 			}
 				
 		
-			ellipse(xi + centroX, yi + centroY, dotD, dotD);
+			ellipse(xi + centroX, yi + centroY, dotDTemp, dotDTemp);
 
 			radiusi = radiusi + dotD + distance;
 			xi = cos(radians(angle)) * radiusi;
