@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="HelloProcessing/src"/>
+	<classpathentry kind="lib" path="HelloProcessing/core.jar"/>
+	<classpathentry kind="lib" path="HelloProcessing/itext.jar"/>
+	<classpathentry kind="lib" path="HelloProcessing/pdf.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
